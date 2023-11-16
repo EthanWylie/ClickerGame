@@ -47,7 +47,8 @@ public class Title {
         jButtonOptions.addActionListener(e -> {
             System.out.println("test");
         });
-
+        
+        // If start button pressed it'll close the title window and open the main game
         jButtonStart.addActionListener(e -> {
             jPanel.removeAll();
             jPanel.revalidate();
