@@ -30,15 +30,18 @@ public class Shop {
     }
 
     void shopOptions() {
+        // Define variables
         shopPanel = new JPanel();
         shopPanel.setBackground(Color.BLACK);
         shopPanel.setLayout(null);
         shopPanel.setBounds(10, 40, 300, 400);
+        shopClose = new JButton("Close");
 
+        // Create multipliers
         multiplierX2 = new JButton("-$10 clicks for x2");
         multiplierX3 = new JButton("-$100 clicks for x3");
         multiplierX5 = new JButton("-$1000 clicks for x5");
-        shopClose = new JButton("Close");
+
 
         multiplierX2.setBounds(10, 40, 200, 50);
         multiplierX3.setBounds(10, 100, 200, 50);
@@ -54,6 +57,7 @@ public class Shop {
         shopClose.setBackground(Color.WHITE);
         shopClose.setForeground(Color.BLACK);
 
+        // Create multiplier functions
         multiplierX2.addActionListener(e -> {
             if (!isMultiplierPurchasedX2 && clickerGame.clickCount >= 10) {
                 clickerGame.clickCount -= 10;
@@ -122,6 +126,8 @@ public class Shop {
         shopPanel.add(multiplierX2);
         shopPanel.add(multiplierX3);
         shopPanel.add(multiplierX5);
+
+        // check if player had brought multiplier
         multiplierX2.setVisible(!isMultiplierPurchasedX2);
         multiplierX3.setVisible(!isMultiplierPurchasedX3);
         multiplierX5.setVisible(!isMultiplierPurchasedX5);

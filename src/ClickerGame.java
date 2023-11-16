@@ -9,6 +9,9 @@ public class ClickerGame {
     JLabel jLabel, buttonPressedTextLabel;
     public int clickCount = 0;
     public Music music = new Music();
+    Shop shop = new Shop(jPanel, this);
+
+
     void window(){
         jFrame = new JFrame("Clicker Game");
 
@@ -20,7 +23,7 @@ public class ClickerGame {
         jFrame.add(jPanel);
         buttonPressedText();
 
-        Shop shop = new Shop(jPanel, this);
+        // call to access shop
         shop.shopButton();
 
         music.music();
@@ -64,13 +67,11 @@ public class ClickerGame {
             clickCount++;
             jLabel.setText("Clicks $" + clickCount);
             buttonPressedTextLabel.setVisible(false);
-
-
-
         });
 
         jPanel.add(jButton);
     }
+
 
     public void addClicks(int clicks){
         clickCount += clicks;
